@@ -1,6 +1,6 @@
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::collections::LookupMap;
-use near_sdk::{env, near_bindgen, AccountId};
+use near_sdk::{env, near_bindgen, Promise, AccountId, Balance};
 
 near_sdk::setup_alloc!();
 
@@ -45,6 +45,11 @@ impl MusicNftExch {
         if account_id == claim_own_id {
             self.proofs_map.insert(&claim, &to);
         }
+    }
+
+    pub fn transfer_claim_with(&mut self, to: AccountId, amount: Balance) {
+        Promise::new(to)
+            .transfer(amount * 1000000000000000000000);
     }
 }
 
@@ -105,8 +110,8 @@ mod tests {
         testing_env!(context);
         let mut contract = MusicNftExch::default();
         contract.insert_claim("music01".to_string());
-        contract.transfer_claim("music01".to_string(),String::from("abort.near"));
+        contract.transfer_claim("music01".to_string(), String::from("abort.near"));
 
-        assert_eq!(Some("abort.near".to_string()),contract.get_claim_owner_id("music01".to_string()))
+        assert_eq!(Some("abort.near".to_string()), contract.get_claim_owner_id("music01".to_string()))
     }
 }
