@@ -11,5 +11,5 @@
     near call abel03-test.testnet new_default_meta '{"owner_id": "abel03-test.testnet"}' --account-id abel03-test.testnet
 
     // nft_mint
-    near call abel03-test.testnet nft_mint '{"token_id": "1", "token_owner_id": "'abel-test03.testnear'", "token_metadata": { "title": "Olympus Mons", "description": "Tallest mountain in charted solar system", "copies": 1}}' --account-id abel03-test.testnet
+    near call abel03-test.testnet nft_mint '{"token_id": "1", "token_owner_id": "'abel-test03.testnear'", "token_metadata": { "title": "Olympus Mons", "description": "Tallest mountain in charted solar system", "copies": 1}}' --account-id abel03-test.testnet --deposit 10
 
