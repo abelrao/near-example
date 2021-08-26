@@ -1,16 +1,17 @@
 # near-example
 
+    // 部署
+    near deploy --wasmFile target/wasm32-unknown-unknown/release/music_nft.wasm --accountId abel03-test.testnet
+
     // 合约地址
-    https://explorer.testnet.near.org/transactions/85dwmYapTgRiDsjGRDTAuBnpsnEdH8T5Z5ASiXEycG35
+    https://explorer.testnet.near.org/transactions/Ec8p4SCSVoQfXP2cDA56TXVthL9V65tc2eiTffxE9jJP
+    
 
     // init 
-    near call abel01-test.testnet new_default_meta '{"owner_id": "abel01-test.testnet"}' --account-id abel01-test.testnet
+    near call abel03-test.testnet new_default_meta '{"owner_id": "abel03-test.testnet"}' --account-id abel03-test.testnet
 
     // nft_mint
-    near call abel01-test.testnet nft_mint '{"token_id": "1", "token_owner_id": "'abel-test01.testnear'", "token_metadata": { "title": "Olympus Mons", "description": "Tallest mountain in charted solar system", "copies": 1}}' --account-id abel01-test.testnet
-
-    // 部署 
-    near deploy --wasmFile target/wasm32-unknown-unknown/release/music_nft.wasm --accountId abel-test.testnet
+    near call abel03-test.testnet nft_mint '{"token_id": "1", "token_owner_id": "'abel-test03.testnear'", "token_metadata": { "title": "Olympus Mons", "description": "Tallest mountain in charted solar system", "copies": 1}}' --account-id abel03-test.testnet
 
 
     // 添加存证
