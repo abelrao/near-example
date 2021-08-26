@@ -12,3 +12,5 @@ Cargo.lock
 music-nft-exchange/.idea/
 
 music-nft-exchange/target/
+
+.idea/
